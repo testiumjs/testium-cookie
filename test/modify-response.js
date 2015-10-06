@@ -29,9 +29,26 @@ test('modify complete response', function(t) {
   t.equal(res.headers['set-cookie'], 'user=robin; path=/',
     'it preserves the original set-cookie header');
 
+  t.equal(res.statusCode, 200,
+    'forces a 200 status code');
+
   var encodedData = TestiumCookie.encodeMetaData(createHeaders(), 420);
   t.equal(res.headers['Set-Cookie'], '_testium_=' + encodedData + '; path=/',
     'it generates its own cookie header for meta data');
+
+  t.end();
+});
+
+test('preserves non-200 success codes', function(t) {
+  var res = {
+    headers: createHeaders(),
+    statusCode: 201
+  };
+  t.equal(TestiumCookie.modifyResponse(res), res,
+    'returns the response object');
+
+  t.equal(res.statusCode, 201,
+    'allows the 201 to pass through');
 
   t.end();
 });
