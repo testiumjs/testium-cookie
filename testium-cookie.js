@@ -22,11 +22,6 @@ function encodeMetaData(headers, statusCode) {
 exports.encodeMetaData = encodeMetaData;
 
 function buildCookie(headers, statusCode) {
-  var jsonData = JSON.stringify({
-    headers: headers,
-    statusCode: statusCode
-  });
-  var encodedData = encode(jsonData);
   return '_testium_=' + encodeMetaData(headers, statusCode) + '; path=/';
 }
 
