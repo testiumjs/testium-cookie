@@ -1,0 +1,32 @@
+{
+  "name": "testium-cookie",
+  "version": "0.0.0",
+  "description": "Logic for encoding and decoding meta data when interacting with the testium proxy",
+  "main": "testium-cookie.js",
+  "scripts": {
+    "test": "jshint testium-cookie.js test && tap 'test/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testiumjs/testium-cookie.git"
+  },
+  "keywords": [
+    "testium",
+    "cookie",
+    "selenium"
+  ],
+  "author": "Jan Krems <jan.krems@groupon.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/testiumjs/testium-cookie/issues"
+  },
+  "homepage": "https://github.com/testiumjs/testium-cookie#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "tap": "^2.0.0"
+  }
+}
