@@ -4,6 +4,11 @@ WebDriver does not return status codes or response headers.
 This module stores those in a special cookie that can be read
 from normal WebDriver methods.
 
+This project is a safe and inclusive place
+for contributors of all kinds.
+See the [Code of Conduct](CODE_OF_CONDUCT.md)
+for details.
+
 ## modifyResponse(res)
 
 Modifies an existing node http response to inject the `_testium_` cookie.
