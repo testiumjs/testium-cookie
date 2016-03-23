@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Logic for encoding and decoding meta data when interacting with the testium proxy",
   "license": "BSD-3-Clause",
-  "main": "testium-cookie.js",
+  "main": "lib/testium-cookie.js",
   "homepage": "https://github.com/testiumjs/testium-cookie#readme",
   "repository": {
     "type": "git",
@@ -33,14 +33,12 @@
     "assertive": "^2.0.0",
     "eslint": "^1.0.0",
     "eslint-config-groupon": "^2.0.0",
-    "jshint": "^2.8.0",
     "mocha": "^2.0.0",
-    "nlm": "^2.0.0",
-    "tap": "^2.0.0"
+    "nlm": "^2.0.0"
   },
   "author": {
-    "name": "Sean Massa",
-    "email": "endangeredmassa@gmail.com"
+    "name": "Groupon",
+    "email": "opensource@groupon.com"
   },
   "contributors": [
     {
@@ -74,6 +72,10 @@
     {
       "name": "Parag Gupta",
       "email": "paraggupta1993@gmail.com"
+    },
+    {
+      "name": "Sean Massa",
+      "email": "endangeredmassa@gmail.com"
     }
   ],
   "keywords": [

@@ -1,6 +1,5 @@
 'use strict';
-
-var test = require('tap').test;
+var assert = require('assertive');
 
 var TestiumCookie = require('../');
 
@@ -8,47 +7,45 @@ function createHeaders() {
   return {
     'content-type': 'text/html',
     'set-cookie': 'user=robin; path=/',
-    'cache-control': 'public; max-age=3600'
+    'cache-control': 'public; max-age=3600',
   };
 }
 
-test('modify complete response', function(t) {
-  var res = {
-    headers: createHeaders(),
-    statusCode: 420
-  };
-  t.equal(TestiumCookie.modifyResponse(res), res,
-    'returns the response object');
+describe('modifyResponse', function () {
+  it('modify complete response', function () {
+    var res = {
+      headers: createHeaders(),
+      statusCode: 420,
+    };
+    assert.equal('returns the response object',
+      res, TestiumCookie.modifyResponse(res));
 
-  t.equal(res.headers['cache-control'], 'no-store',
-    'it overrides the cache-control header');
+    assert.equal('it overrides the cache-control header',
+      'no-store', res.headers['cache-control']);
 
-  t.equal(res.headers['content-type'], 'text/html',
-    'it keeps other headers around');
+    assert.equal('it keeps other headers around',
+      'text/html', res.headers['content-type']);
 
-  t.equal(res.headers['set-cookie'], 'user=robin; path=/',
-    'it preserves the original set-cookie header');
+    assert.equal('it preserves the original set-cookie header',
+      'user=robin; path=/', res.headers['set-cookie']);
 
-  t.equal(res.statusCode, 200,
-    'forces a 200 status code');
+    assert.equal('forces a 200 status code',
+      200, res.statusCode);
 
-  var encodedData = TestiumCookie.encodeMetaData(createHeaders(), 420);
-  t.equal(res.headers['Set-Cookie'], '_testium_=' + encodedData + '; path=/',
-    'it generates its own cookie header for meta data');
+    var encodedData = TestiumCookie.encodeMetaData(createHeaders(), 420);
+    assert.equal('it generates its own cookie header for meta data',
+      '_testium_=' + encodedData + '; path=/', res.headers['Set-Cookie']);
+  });
 
-  t.end();
-});
+  it('preserves non-200 success codes', function () {
+    var res = {
+      headers: createHeaders(),
+      statusCode: 201,
+    };
+    assert.equal('returns the response object',
+      res, TestiumCookie.modifyResponse(res));
 
-test('preserves non-200 success codes', function(t) {
-  var res = {
-    headers: createHeaders(),
-    statusCode: 201
-  };
-  t.equal(TestiumCookie.modifyResponse(res), res,
-    'returns the response object');
-
-  t.equal(res.statusCode, 201,
-    'allows the 201 to pass through');
-
-  t.end();
+    assert.equal('allows the 201 to pass through',
+      201, res.statusCode);
+  });
 });

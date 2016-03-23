@@ -1,34 +1,33 @@
 'use strict';
-
-var test = require('tap').test;
+var assert = require('assertive');
 
 var TestiumCookie = require('../');
 
 var HEADERS = {
   'content-type': 'text/html',
   'set-cookie': 'user=robin; path=/',
-  'cache-control': 'public; max-age=3600'
+  'cache-control': 'public; max-age=3600',
 };
 
-test('From cookie dictionary', function(t) {
-  var testiumCookie = TestiumCookie.getTestiumCookie({
-    _testium_: TestiumCookie.encodeMetaData(HEADERS, 404)
+describe('getTestiumCookie', function () {
+  it('Can extract from a cookie dictionary', function () {
+    var testiumCookie = TestiumCookie.getTestiumCookie({
+      _testium_: TestiumCookie.encodeMetaData(HEADERS, 404),
+    });
+    assert.deepEqual({
+      headers: HEADERS,
+      statusCode: 404,
+    }, testiumCookie);
   });
-  t.deepEqual(testiumCookie, {
-    headers: HEADERS,
-    statusCode: 404
-  });
-  t.end();
-});
 
-test('From cookie list', function(t) {
-  var testiumCookie = TestiumCookie.getTestiumCookie([{
-    name: '_testium_',
-    value: TestiumCookie.encodeMetaData(HEADERS, 404)
-  }]);
-  t.deepEqual(testiumCookie, {
-    headers: HEADERS,
-    statusCode: 404
+  it('can extract from a cookie list', function () {
+    var testiumCookie = TestiumCookie.getTestiumCookie([{
+      name: '_testium_',
+      value: TestiumCookie.encodeMetaData(HEADERS, 404),
+    }]);
+    assert.deepEqual({
+      headers: HEADERS,
+      statusCode: 404,
+    }, testiumCookie);
   });
-  t.end();
 });
