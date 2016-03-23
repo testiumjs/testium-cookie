@@ -1,6 +1,6 @@
 {
   "name": "testium-cookie",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Logic for encoding and decoding meta data when interacting with the testium proxy",
   "main": "testium-cookie.js",
   "scripts": {
