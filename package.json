@@ -1,6 +1,6 @@
 {
   "name": "testium-cookie",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logic for encoding and decoding meta data when interacting with the testium proxy",
   "license": "BSD-3-Clause",
   "main": "lib/testium-cookie.js",
