@@ -2,22 +2,43 @@
   "name": "testium-cookie",
   "version": "1.0.1",
   "description": "Logic for encoding and decoding meta data when interacting with the testium proxy",
-  "main": "testium-cookie.js",
-  "scripts": {
-    "test": "jshint testium-cookie.js test && tap 'test/*.js'"
-  },
+  "license": "BSD-3-Clause",
+  "main": "lib/testium-cookie.js",
+  "homepage": "https://github.com/testiumjs/testium-cookie#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/testiumjs/testium-cookie.git"
+    "url": "git+ssh://git@github.com/testiumjs/testium-cookie"
   },
-  "keywords": [
-    "testium",
-    "cookie",
-    "selenium"
-  ],
+  "bugs": {
+    "url": "https://github.com/testiumjs/testium-cookie/issues",
+    "chat": "http://signup.testiumjs.com/"
+  },
+  "scripts": {
+    "pretest": "eslint lib test",
+    "test": "mocha",
+    "posttest": "nlm verify"
+  },
+  "nlm": {
+    "license": {
+      "files": [
+        "lib"
+      ]
+    }
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {
+    "assertive": "^2.0.0",
+    "eslint": "^1.0.0",
+    "eslint-config-groupon": "^2.0.0",
+    "mocha": "^2.0.0",
+    "nlm": "^2.0.0"
+  },
   "author": {
-    "name": "Sean Massa",
-    "email": "endangeredmassa@gmail.com"
+    "name": "Groupon",
+    "email": "opensource@groupon.com"
   },
   "contributors": [
     {
@@ -51,19 +72,22 @@
     {
       "name": "Parag Gupta",
       "email": "paraggupta1993@gmail.com"
+    },
+    {
+      "name": "Sean Massa",
+      "email": "endangeredmassa@gmail.com"
     }
   ],
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/testiumjs/testium-cookie/issues"
-  },
-  "homepage": "https://github.com/testiumjs/testium-cookie#readme",
-  "dependencies": {
-    "debug": "^2.2.0",
-    "lodash": "^3.10.1"
-  },
-  "devDependencies": {
-    "jshint": "^2.8.0",
-    "tap": "^2.0.0"
+  "keywords": [
+    "testium",
+    "cookie",
+    "selenium"
+  ],
+  "files": [
+    "*.js",
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
