@@ -1,3 +1,17 @@
+### 2.0.0 - 2020-03-26
+
+#### Breaking Changes
+
+- drop Node 8 / 6 /4 / 0.1x support
+
+*See: [`8a2a961`](https://github.com/testiumjs/testium-cookie/commit/8a2a961d604f373c5e09285e4af2a58853af6b0e)*
+
+#### Commits
+
+* chore: upgrade packages & deprecate node 8 and below - **[@aaarichter](https://github.com/aaarichter)** [#4](https://github.com/testiumjs/testium-cookie/pull/4)
+  - [`8a2a961`](https://github.com/testiumjs/testium-cookie/commit/8a2a961d604f373c5e09285e4af2a58853af6b0e) **chore:** upgrade packages & deprecate node 8 and below
+
+
 ### 1.0.2
 
 * Apply latest nlm generator - **[@i-tier-bot](https://github.com/i-tier-bot)** [#3](https://github.com/testiumjs/testium-cookie/pull/3)
