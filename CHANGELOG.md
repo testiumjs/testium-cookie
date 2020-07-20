@@ -1,3 +1,10 @@
+### 2.0.1 - 2020-07-20
+
+* Bump lodash from 4.17.15 to 4.17.19 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#5](https://github.com/testiumjs/testium-cookie/pull/5)
+  - [`8ad881a`](https://github.com/testiumjs/testium-cookie/commit/8ad881ae1fcde913bd9ce87708905e98392c372d) **chore:** Bump lodash from 4.17.15 to 4.17.19 - see: [4](- [Commits](https://github.com/lodash/lodash/compare/4)
+  - [`e46b453`](https://github.com/testiumjs/testium-cookie/commit/e46b453ccb1e1db18146bcbbafb7864dcc4faf7e) **docs:** update CONTRIBUTING.md
+
+
 ### 2.0.0 - 2020-03-26
 
 #### Breaking Changes
