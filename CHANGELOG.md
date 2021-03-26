@@ -1,3 +1,10 @@
+### v2.0.3 (2021-03-26)
+
+#### 🏡 Internal
+
+* [#7](https://github.com/testiumjs/testium-cookie/pull/7) chore: switch to main & update packages ([@aaarichter](https://github.com/aaarichter)) 
+
+
 ### 2.0.2 - 2021-02-17
 
 * chore(deps): Bump ini from 1.3.5 to 1.3.8 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#6](https://github.com/testiumjs/testium-cookie/pull/6)
