@@ -1,4 +1,4 @@
-# testium-cookie [![Build Status](https://travis-ci.org/testiumjs/testium-cookie.svg?branch=master)](https://travis-ci.org/testiumjs/testium-cookie)
+# testium-cookie [![Build Status](https://travis-ci.org/testiumjs/testium-cookie.svg?branch=main)](https://travis-ci.org/testiumjs/testium-cookie)
 
 WebDriver does not return status codes or response headers.
 This module stores those in a special cookie that can be read
